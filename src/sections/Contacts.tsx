@@ -4,7 +4,6 @@ export default function Contacts() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Стейт для хранения данных полей формы
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,12 +11,10 @@ export default function Contacts() {
     message: ''
   });
 
-  // Функция отслеживания изменений в инпутах
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Функция отправки данных на ваш сервер Рег.ру
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -45,12 +42,11 @@ export default function Contacts() {
   };
 
   return (
-    /* Добавлен адаптивный отступ pt-24 (для мобильных), чтобы каталог серий больше не наезжал */
     <section id="contacts" className="pt-24 md:pt-12 pb-12 w-full text-white">
       <div className="reveal" data-idx="2">
         {sent ? (
           <div className="flex h-full min-h-[200px] items-center border border-[#3834ff] p-6 justify-center">
-            <p className="text-lg font-semibold text-white">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
+            <p className="text-lg font-semibold text-white">Заявка отправлена. Мы свяжемся с вами в ближайшем времени.</p>
           </div>
         ) : (
           <form className="space-y-8 max-w-xl mx-auto" onSubmit={handleSubmit}>
