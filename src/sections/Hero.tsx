@@ -41,11 +41,11 @@ export default function Hero() {
             </span>
           </p>
           <div className="line-mask">
-            <span style={{ transitionDelay: '520ms' }} className="flex flex-wrap gap-4">
-              <a href="#contacts" className="btn-primary px-8 py-4 text-[12px] font-bold uppercase tracking-[0.2em]">
+            <span style={{ transitionDelay: '520ms' }} className="flex flex-col sm:flex-row gap-4 w-full">
+              <a href="#contacts" className="btn-primary px-8 py-4 text-[12px] font-bold uppercase w-max">
                 {t.hero.cta1}
               </a>
-              <a href="#products" className="btn-ghost px-8 py-4 text-[12px] font-bold uppercase tracking-[0.2em]">
+              <a href="#products" className="btn-ghost px-8 py-4 text-[12px] font-bold uppercase w-max">
                 {t.hero.cta2}
               </a>
             </span>

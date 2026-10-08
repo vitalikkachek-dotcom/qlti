@@ -68,7 +68,7 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="grid gap-px bg-[rgba(243,243,243,0.09)] md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-16">
           {t.products.items.map((p, i) => (
             <article key={p.name} className="reveal group bg-[#050508] p-0" data-idx={i + 1}>
               <div className="relative aspect-[16/9] overflow-hidden">
