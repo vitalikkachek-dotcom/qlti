@@ -14,8 +14,8 @@ export default function Contacts() {
   // Состояние для сбора данных из полей формы
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
-    email: '',
+    phone: '', // Оставляем поле в стейте, чтобы бэкенд не ругался
+    email: '', // Сюда будет попадать строка из инпута "E-mail или телефон"
     message: ''
   })
 
@@ -26,7 +26,7 @@ export default function Contacts() {
       ...prev,
       [id]: value
     }))
-  }
+  };
 
   // Функция отправки данных формы на бэкенд
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -97,10 +97,7 @@ export default function Contacts() {
               <form className="space-y-8" onSubmit={handleSubmit}>
                 {[
                   { id: 'name', ph: t.contacts.name, type: 'text' },
-                  // Добавили поле телефона, так как send.php его ждет. 
-                  // Если в t.contacts.phone нет перевода, можно временно написать lang === 'ru' ? 'Телефон' : 'Phone'
-                  { id: 'phone', ph: (t.contacts as any).phone || (lang === 'ru' ? 'Телефон' : 'Phone'), type: 'tel' },
-                  { id: 'email', ph: t.contacts.email, type: 'email' },
+                  { id: 'email', ph: t.contacts.email, type: 'text' }, // Возвращено исходное поле "E-mail или телефон"
                 ].map((f) => (
                   <div key={f.id}>
                     <input
